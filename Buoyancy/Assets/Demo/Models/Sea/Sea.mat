@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sea
+  m_Shader: {fileID: 4800000, guid: 3526aa52ae7f2474aa94f6e3afa4d2e5, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 6ff884c0b033c2c4ebf27ae72c478883, type: 3}
+        m_Scale: {x: 10, y: 10}
+        m_Offset: {x: 0, y: 0}
+    - _Cube:
+        m_Texture: {fileID: 8900000, guid: ce6a2fd084f89be4aa6d3ff04a79cccf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Foam:
+        m_Texture: {fileID: 2800000, guid: 4655220673b9a4b4185513be7163ed66, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectionTex:
+        m_Texture: {fileID: 8400000, guid: ebb8e054c33d97349bc86ac6fc782f64, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _FresnelScale: 0.15
+    - _Glossiness: 0.5
+    - _Intensity: 10
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _Periode: 0.3
+    - _Shininess: 265
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _WaveLengthInverse: 0.1
+    - _ZWrite: 1
+    m_Colors:
+    - _BaseColor: {r: 0.026275955, g: 0.13437988, b: 0.19852942, a: 0.934}
+    - _BumpDirection: {r: 40, g: 40, b: 40, a: -40}
+    - _BumpTiling: {r: 0.05, g: 0.07, b: 0.08, a: 0.06}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DistortParams: {r: 1.44, g: 0.24, b: 1.85, a: -0.53}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ReflectionColor: {r: 0.48264486, g: 0.5361673, b: 0.5808823, a: 0.278}
+    - _SpecularColor: {r: 0.9411765, g: 0.844577, b: 0.6366782, a: 0.27053705}
+    - _WaterColor: {r: 0, g: 0, b: 0, a: 0.5}
+    - _WorldLightDir: {r: -0.03, g: -0.201, b: -1, a: 0}
+    - world_light_dir: {r: 0.5710599, g: 0.5947614, b: 0.5658178, a: 0}
