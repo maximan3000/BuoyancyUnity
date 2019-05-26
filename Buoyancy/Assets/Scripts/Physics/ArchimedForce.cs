@@ -8,17 +8,20 @@ namespace Buoyancy.Physics
 {
     public class ArchimedForce
     {
-        public static float r = 1000f;
-        public static float g = 9.8f;
+        public static float density = 1000f;
+        public static float gravity = 9.8f;
 
         private Rigidbody rb;
         private Triangle triangle;
         private Vector3 center;
+        private float height;
 
         public ArchimedForce(Triangle triangle, Rigidbody rb)
         {
             this.triangle = triangle;
             this.rb = rb;
+            this.center = TriangleMath.GetCenter(triangle);
+            this.height = Mathf.Abs(WaterMath.DistanceToWater(center));
         }
 
         public static void ApplyForce(Triangle triangle, Rigidbody rb)
@@ -30,18 +33,16 @@ namespace Buoyancy.Physics
         {
             var force = MakeForce();
             rb.AddForceAtPosition(force, center);
-            Debug.DrawRay(center, TriangleMath.GetNormal(triangle), Color.white);
+            Debug.DrawRay(center, force.normalized, Color.white);
         }
 
         private Vector3 MakeForce()
         {
             Vector3 direction = -TriangleMath.GetNormal(triangle);
-            this.center = TriangleMath.GetCenter(triangle);
-            float H = WaterMath.DistanceToWater(center);
-            float dS = TriangleMath.GetSquare(triangle);
+            float square = TriangleMath.GetSquare(triangle);
 
-            float magnitude = r * g * H * dS;
-            return direction * Mathf.Abs(magnitude);
+            float magnitude = density * gravity * height * square;
+            return direction * magnitude;
         }
     }
 }

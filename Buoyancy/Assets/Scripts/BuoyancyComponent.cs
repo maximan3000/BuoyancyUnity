@@ -43,7 +43,7 @@ namespace Buoyancy
             //var linkMesh = underwaterMesh.GetComponent<MeshFilter>().mesh;
             //DisplayWorker.DisplayTriangles(linkMesh, transform, underwater);
 
-            EnableWaterDrag(underwater.Count / totalTrianglesCount);
+            //EnableWaterDrag(underwater.Count / totalTrianglesCount);
             ApplyForces(underwater);
             WaterMath.casheHeightMap.Clear();
         }
@@ -53,6 +53,7 @@ namespace Buoyancy
             foreach (Triangle triangle in underwater)
             {
                 ArchimedForce.ApplyForce(triangle, rb);
+                ResistanceForces.ApplyForce(triangle, rb);
             }
         }
 

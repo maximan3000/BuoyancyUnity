@@ -19,7 +19,7 @@ namespace Demo.Ocean
             {
                 this.waveLength = waveLength;
                 this.speed = speed;
-                this.amplitude = amplitude * 2;
+                this.amplitude = amplitude * 0;
                 this.sharpness = sharpness;
                 this.direction = direction.normalized;
                 frequency = (2 * Mathf.PI) / waveLength;

@@ -21,8 +21,6 @@ namespace Buoyancy.Math
         {
             var normal = Vector3.Cross(triangle.B - triangle.A, triangle.C - triangle.A);
             normal.Normalize();
-            if (normal.y > 0)
-                normal = -normal;
             return normal;
         }
 
@@ -31,7 +29,15 @@ namespace Buoyancy.Math
             Vector3 AC = triangle.C - triangle.A;
             Vector3 AB = triangle.B - triangle.A;
             Vector3 cross = Vector3.Cross(AC, AB);
-            return cross.magnitude / 2;
+            return Mathf.Abs(cross.magnitude) / 2;
+        }
+
+        public static float GetLength(Triangle triangle)
+        {
+            Vector3 AC = triangle.C - triangle.A;
+            Vector3 AB = triangle.B - triangle.A;
+            Vector3 BC = triangle.C - triangle.B;
+            return (Mathf.Abs(AC.magnitude) + Mathf.Abs(AB.magnitude) + Mathf.Abs(BC.magnitude)) / 3;
         }
     }
 }

@@ -11,42 +11,62 @@ namespace Buoyancy.Physics
 {
     class ResistanceForces
     {
-        //public static float r = 1000f;
-        //public static float g = 9.8f;
+        public static float forceMultiply = 100f;
+        public static float density = 1000f;
+        public static float viscosity = 0.0014f;
 
-        //private Rigidbody rb;
-        //private Triangle triangle;
-        //private Vector3 center;
+        private static float lastSpeed;
+        private static float resistanceCoefficient;
 
-        //public ResistanceForces(Triangle triangle, Rigidbody rb)
-        //{
-        //    this.triangle = triangle;
-        //    this.rb = rb;
-        //}
+        private Rigidbody rb;
+        private Triangle triangle;
+        private Vector3 center;
+        private float speed;
 
-        //public static void ApplyForce(Triangle triangle, Rigidbody rb)
-        //{
-        //    new ResistanceForces(triangle, rb).ApplyForce();
-        //}
+        public ResistanceForces(Triangle triangle, Rigidbody rb)
+        {
+            this.triangle = triangle;
+            this.rb = rb;
+            this.center = TriangleMath.GetCenter(triangle);
+            this.speed = Mathf.Abs(rb.velocity.magnitude);
+            if (lastSpeed != speed)
+            {
+                lastSpeed = speed;
+                RecalculateResistanceCoefficient();
+            }
+        }
 
-        //private void ApplyForce()
-        //{
-        //    var force = MakeForce();
-        //    this.center = TriangleMath.GetCenter(triangle);
-        //    rb.AddForceAtPosition(force, center);
-        //    //Debug.DrawRay(center, TriangleMath.GetNormal(triangle), Color.white);
-        //}
+        private void RecalculateResistanceCoefficient()
+        {
+            float length = TriangleMath.GetLength(triangle);
+            float reynoldsCoefficient = (density * speed * length) / viscosity;
 
-        //private Vector3 MakeForce()
-        //{
-        //    var velocity = rb.velocity;
-        //    var normal = TriangleMath.GetNormal(triangle);
-        //    Vector3 direction = -Vector3.ProjectOnPlane(velocity.normalized, normal);
-        //    float dS = TriangleMath.GetSquare(triangle);
-        //    float V = velocity.magnitude;
+            float temp = Mathf.Log10(reynoldsCoefficient) - 2;
+            float resistance = 0.075f / (temp * temp);
+            resistanceCoefficient = Mathf.Abs(resistance);
+        }
 
-        //    float magnitude = (r * V * V * dS * Cf) / 2;
-        //    return direction * Mathf.Abs(magnitude);
-        //}
+        public static void ApplyForce(Triangle triangle, Rigidbody rb)
+        {
+            new ResistanceForces(triangle, rb).ApplyForce();
+        }
+
+        private void ApplyForce()
+        {
+            var force = MakeForce();
+            rb.AddForceAtPosition(force, center);
+            //Debug.DrawRay(center, force.normalized, Color.white);
+        }
+
+        private Vector3 MakeForce()
+        {
+            var velocity = rb.velocity;
+            var normal = TriangleMath.GetNormal(triangle);
+            Vector3 direction = -Vector3.ProjectOnPlane(velocity.normalized, normal);
+            float square = TriangleMath.GetSquare(triangle);
+
+            float magnitude = (density * speed * speed * square * resistanceCoefficient) / 2;
+            return direction * magnitude * forceMultiply;
+        }
     }
 }
