@@ -960,7 +960,7 @@ MonoBehaviour:
   engine: {fileID: 1831684648}
   rudder: {fileID: 1831684647}
   forceMax: 400000
-  forceIncrease: 3000
+  forceIncrease: 20000
   forceDamping: 1000
 --- !u!114 &1101612150
 MonoBehaviour:
@@ -988,7 +988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centerOfMass: {fileID: 1125359886}
-  maxDrag: 0
+  maxDrag: 2
 --- !u!1 &1125359886
 GameObject:
   m_ObjectHideFlags: 0
@@ -1251,7 +1251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 444586, guid: cb752ddf9521c714eb0529474657b0fe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.115
+      value: 15.55
       objectReference: {fileID: 0}
     - target: {fileID: 444586, guid: cb752ddf9521c714eb0529474657b0fe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1291,7 +1291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5406230, guid: cb752ddf9521c714eb0529474657b0fe, type: 3}
       propertyPath: m_AngularDrag
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3357090, guid: cb752ddf9521c714eb0529474657b0fe, type: 3}
       propertyPath: m_Mesh
@@ -1499,7 +1499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 406738, guid: e1e9f48d71f586e48b0ab82651cd8eb4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 406738, guid: e1e9f48d71f586e48b0ab82651cd8eb4, type: 3}
       propertyPath: m_LocalPosition.z

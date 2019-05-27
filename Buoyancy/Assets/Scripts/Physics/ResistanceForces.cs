@@ -11,7 +11,7 @@ namespace Buoyancy.Physics
 {
     class ResistanceForces
     {
-        public static float forceMultiply = 100f;
+        public static float forceMultiply = 300f;
         public static float density = 1000f;
         public static float viscosity = 0.0014f;
 
@@ -28,7 +28,7 @@ namespace Buoyancy.Physics
             this.triangle = triangle;
             this.rb = rb;
             this.center = TriangleMath.GetCenter(triangle);
-            this.speed = Mathf.Abs(rb.velocity.magnitude);
+            this.speed = rb.velocity.magnitude;
             if (lastSpeed != speed)
             {
                 lastSpeed = speed;
@@ -66,7 +66,7 @@ namespace Buoyancy.Physics
             float square = TriangleMath.GetSquare(triangle);
 
             float magnitude = (density * speed * speed * square * resistanceCoefficient) / 2;
-            return direction * magnitude * forceMultiply;
+            return direction * Mathf.Abs(magnitude) * forceMultiply;
         }
     }
 }

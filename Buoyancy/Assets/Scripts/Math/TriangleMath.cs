@@ -19,10 +19,10 @@ namespace Buoyancy.Math
 
         public static Vector3 GetNormal(Triangle triangle)
         {
-            var normal = Vector3.Cross(triangle.B - triangle.A, triangle.C - triangle.A);
-            normal.Normalize();
-            return normal;
+            var plane = new Plane(triangle.A, triangle.B, triangle.C);
+            return plane.normal;
         }
+
 
         public static float GetSquare(Triangle triangle)
         {

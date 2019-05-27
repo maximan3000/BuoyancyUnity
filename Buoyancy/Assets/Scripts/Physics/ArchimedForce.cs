@@ -21,7 +21,7 @@ namespace Buoyancy.Physics
             this.triangle = triangle;
             this.rb = rb;
             this.center = TriangleMath.GetCenter(triangle);
-            this.height = Mathf.Abs(WaterMath.DistanceToWater(center));
+            this.height = WaterMath.DistanceToWater(center);
         }
 
         public static void ApplyForce(Triangle triangle, Rigidbody rb)
@@ -33,7 +33,7 @@ namespace Buoyancy.Physics
         {
             var force = MakeForce();
             rb.AddForceAtPosition(force, center);
-            Debug.DrawRay(center, force.normalized, Color.white);
+            //Debug.DrawRay(center, force.normalized, Color.white);
         }
 
         private Vector3 MakeForce()
@@ -42,7 +42,8 @@ namespace Buoyancy.Physics
             float square = TriangleMath.GetSquare(triangle);
 
             float magnitude = density * gravity * height * square;
-            return direction * magnitude;
+            //direction = Vector3.Project(direction, Vector3.up);
+            return direction * Mathf.Abs(magnitude);
         }
     }
 }

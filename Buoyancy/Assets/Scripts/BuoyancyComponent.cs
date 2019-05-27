@@ -15,7 +15,6 @@ namespace Buoyancy
     {
         //public GameObject underwaterMesh;
         public GameObject centerOfMass = null;
-        public float maxDrag = 2;
 
         private Mesh mesh;
         private List<Triangle> triangles;
@@ -43,7 +42,6 @@ namespace Buoyancy
             //var linkMesh = underwaterMesh.GetComponent<MeshFilter>().mesh;
             //DisplayWorker.DisplayTriangles(linkMesh, transform, underwater);
 
-            //EnableWaterDrag(underwater.Count / totalTrianglesCount);
             ApplyForces(underwater);
             WaterMath.casheHeightMap.Clear();
         }
@@ -54,12 +52,8 @@ namespace Buoyancy
             {
                 ArchimedForce.ApplyForce(triangle, rb);
                 ResistanceForces.ApplyForce(triangle, rb);
+                PressureForces.ApplyForce(triangle, rb);
             }
-        }
-
-        private void EnableWaterDrag(float sinkingRate)
-        {
-            rb.drag = maxDrag * sinkingRate;
         }
     }
 }
