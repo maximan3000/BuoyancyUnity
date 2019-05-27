@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Buoyancy.Struct;
 using Buoyancy.Math;
+using Buoyancy.Debug;
 
 namespace Buoyancy.Physics
 {
@@ -33,7 +32,7 @@ namespace Buoyancy.Physics
         {
             var force = MakeForce();
             rb.AddForceAtPosition(force, center);
-            //Debug.DrawRay(center, force.normalized, Color.white);
+            //TODO debug purposes DisplayWorker.DisplayForce(center, force);
         }
 
         private Vector3 MakeForce()
@@ -42,6 +41,7 @@ namespace Buoyancy.Physics
             float square = TriangleMath.GetSquare(triangle);
 
             float magnitude = density * gravity * height * square;
+            /* TODO If need only vertical force */
             //direction = Vector3.Project(direction, Vector3.up);
             return direction * Mathf.Abs(magnitude);
         }

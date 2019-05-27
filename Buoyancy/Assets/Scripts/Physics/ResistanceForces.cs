@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 using Buoyancy.Struct;
 using Buoyancy.Math;
+using Buoyancy.Debug;
 
 namespace Buoyancy.Physics
 {
@@ -55,7 +51,7 @@ namespace Buoyancy.Physics
         {
             var force = MakeForce();
             rb.AddForceAtPosition(force, center);
-            //Debug.DrawRay(center, force.normalized, Color.white);
+            //TODO debug purposes DisplayWorker.DisplayForce(center, force);
         }
 
         private Vector3 MakeForce()

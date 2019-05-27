@@ -1,47 +1,85 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using Buoyancy.MeshWorker;
 using Buoyancy.Struct;
 using Buoyancy.Math;
 using Buoyancy.Physics;
+using Buoyancy.Debug;
+using System;
 
 namespace Buoyancy
 {
 
-
+    [RequireComponent(typeof(Rigidbody))]
     public class BuoyancyComponent : MonoBehaviour
     {
-        //public GameObject underwaterMesh;
+        #region DebugPurposes
+        [Header("Debug purposes")]
+        public bool showUnderwaterPart;
+        
+        private delegate void DebugHandler(List<Triangle> triangles);
+        private DebugHandler debugHandler;
+        #endregion
+
+        #region ComponentParams
+        [Header("Center of mass")]
+        [Tooltip("If on, center of mass will be set to the gameObject's position")]
+        public bool shiftCenterOfMass;
         public GameObject centerOfMass = null;
 
-        private Mesh mesh;
-        private List<Triangle> triangles;
+        [Header("Buoyancy mesh")]
+        [Tooltip("Use low polygonal meshes to improve performance")]
+        public Mesh hullMesh;
+
+        [Header("Archimed Force parameters")]
+        public bool useArchimedForce;
+        [Header("Resistance Forces parameters")]
+        public bool useResistanceForces;
+        [Header("Pressure Forces parameters")]
+        public bool usePressureForces;
+        #endregion
+
         private Rigidbody rb;
         private float totalTrianglesCount;
+        private delegate void ApplyForcesHandler(Triangle triangle, Rigidbody rb);
+        private ApplyForcesHandler applyForcesHandler;
 
         void Start()
         {
             rb = gameObject.GetComponent<Rigidbody>();
-            mesh = gameObject.GetComponent<MeshFilter>().mesh;
-            totalTrianglesCount = mesh.triangles.Length / 3;
+            totalTrianglesCount = hullMesh.triangles.Length / 3;
 
-            if (centerOfMass!=null)
+            HandleInspectorMenu();
+        }
+
+        private void HandleInspectorMenu()
+        {
+            if (useArchimedForce)
+                applyForcesHandler += ArchimedForce.ApplyForce;
+            if (useResistanceForces)
+                applyForcesHandler += ResistanceForces.ApplyForce;
+            if (usePressureForces)
+                applyForcesHandler += PressureForces.ApplyForce;
+
+            if (shiftCenterOfMass)
             {
                 var center = transform.InverseTransformPoint(centerOfMass.transform.position);
                 rb.centerOfMass = center;
+            }
+
+            if (showUnderwaterPart)
+            {
+                debugHandler += DisplayWorker.DisplayTriangles;
             }
         }
 
         private void FixedUpdate()
         {
-            triangles = TriangleParser.parse(mesh, transform);
+            var triangles = TriangleParser.parse(hullMesh, transform);
             var underwater = HullMath.GetUnderwaterTriangles(triangles);
 
-            //var linkMesh = underwaterMesh.GetComponent<MeshFilter>().mesh;
-            //DisplayWorker.DisplayTriangles(linkMesh, transform, underwater);
-
+            if (debugHandler != null)
+                debugHandler(underwater);
             ApplyForces(underwater);
             WaterMath.casheHeightMap.Clear();
         }
@@ -50,9 +88,7 @@ namespace Buoyancy
         {
             foreach (Triangle triangle in underwater)
             {
-                ArchimedForce.ApplyForce(triangle, rb);
-                ResistanceForces.ApplyForce(triangle, rb);
-                PressureForces.ApplyForce(triangle, rb);
+                applyForcesHandler(triangle, rb);
             }
         }
     }

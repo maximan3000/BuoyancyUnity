@@ -1,16 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 using Demo.Ocean;
-using Buoyancy.Struct;
 
 namespace Buoyancy.Math
 {
     public class WaterMath 
     {
         /* Ключ к словарю берется из координаты Y точки, 
-         * поэтому нужен коэффициент, который какие точки (какие Y координаты) будут иметь одинаковый ключ*/
+         * поэтому нужен коэффициент, который покажет, 
+         * какие точки с координатой Y будут иметь одинаковый ключ (интервал координат Y) */
         public static float heightMapKeyInterval = 1000f;
         public static Dictionary<int, float> casheHeightMap = new Dictionary<int, float>();
 

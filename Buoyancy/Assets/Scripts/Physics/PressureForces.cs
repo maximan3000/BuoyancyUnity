@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 using Buoyancy.Struct;
 using Buoyancy.Math;
+using Buoyancy.Debug;
 
 namespace Buoyancy.Physics
 {
     class PressureForces
     {
-        public static float pressureDragCoefficient = 300f;
-        public static float suctionDragCoefficient = 300f;
+        public static float pressureDragCoefficient = 1200f;
+        public static float suctionDragCoefficient = 1200f;
         public static float pressureFalloffPower = 0.1f;
         public static float suctionFalloffPower = 0.1f;
 
@@ -30,7 +26,6 @@ namespace Buoyancy.Physics
             this.rb = rb;
             this.center = TriangleMath.GetCenter(triangle);
             this.speed = rb.velocity.magnitude;
-            speed *= 2;
             this.normal = TriangleMath.GetNormal(triangle);
             this.angleNormalVelocity = Vector3.Angle(normal, rb.velocity);
             this.cosNormalVelocity = Mathf.Cos(angleNormalVelocity);
@@ -48,11 +43,13 @@ namespace Buoyancy.Physics
             {
                 force = MakePressureForce();
                 rb.AddForceAtPosition(force, center);
+                //TODO debug purposes DisplayWorker.DisplayForce(center, force);
             }
             else if (angleNormalVelocity >= 90f)
             {
                 force = MakeSuctionForce();
                 rb.AddForceAtPosition(force, center);
+                //TODO debug purposes DisplayWorker.DisplayForce(center, force);
             }
         }
 
@@ -66,7 +63,6 @@ namespace Buoyancy.Physics
                 speed * speed * 
                 square * 
                 Mathf.Pow(Mathf.Abs(cosNormalVelocity), pressureFalloffPower);
-            //Debug.DrawRay(center, direction, Color.white);
             return direction * Mathf.Abs(magnitude);
         }
 
@@ -80,7 +76,6 @@ namespace Buoyancy.Physics
                 speed * speed *
                 square *
                 Mathf.Pow(Mathf.Abs(cosNormalVelocity), suctionFalloffPower);
-            //Debug.DrawRay(center, direction, Color.white);
             return direction * Mathf.Abs(magnitude);
         }
     }
