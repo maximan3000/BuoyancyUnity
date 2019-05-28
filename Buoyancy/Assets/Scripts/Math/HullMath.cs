@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Buoyancy.Math
 {
-    class HullMath
+    public class HullMath
     {
         private List<Triangle> underwaterTriangles = new List<Triangle>();
         private Vector3 H, M, L;
@@ -26,18 +26,24 @@ namespace Buoyancy.Math
 
         private void CheckTriangle(Triangle triangle)
         {
-            List<Vector3> vertices = new List<Vector3>() { triangle.A, triangle.B, triangle.C };
+            var vertices = new List<Vector3>() { triangle.A, triangle.B, triangle.C };
             vertices.Sort((p1, p2) => p2.y.CompareTo(p1.y));
 
             H = vertices[0]; M = vertices[1]; L = vertices[2];
             hH = WaterMath.DistanceToWater(H); hM = WaterMath.DistanceToWater(M); hL = WaterMath.DistanceToWater(L);
 
-            if (hH <= 0 && hM <= 0 && hL <= 0)
+            if (hH <= 0f && hM <= 0f && hL <= 0f)
+            {
                 underwaterTriangles.Add(triangle);
-            else if (hH > 0 && hM < 0 && hL < 0)
+            }
+            else if (hH > 0f && hM < 0f && hL < 0f)
+            {
                 OneVertexAboveWater();
-            else if (hH > 0 && hM > 0 && hL < 0)
+            }
+            else if (hH > 0f && hM > 0f && hL < 0f)
+            {
                 TwoVerticesAboveWater();
+            }
         }
 
         private void OneVertexAboveWater()

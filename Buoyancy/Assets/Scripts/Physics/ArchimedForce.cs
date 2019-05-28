@@ -5,44 +5,50 @@ using Buoyancy.Debug;
 
 namespace Buoyancy.Physics
 {
-    public class ArchimedForce
+    internal class ArchimedForce : IForce
     {
-        public static float density = 1000f;
-        public static float gravity = 9.8f;
+        private float DENSITY;
+        private bool UP_ONLY;
 
         private Rigidbody rb;
         private Triangle triangle;
         private Vector3 center;
         private float height;
 
-        public ArchimedForce(Triangle triangle, Rigidbody rb)
+        public ArchimedForce(float density, bool upOnly)
+        {
+            this.DENSITY = density;
+            this.UP_ONLY = upOnly;
+        }
+
+        public void ApplyForce(Triangle triangle, Rigidbody rb)
         {
             this.triangle = triangle;
             this.rb = rb;
             this.center = TriangleMath.GetCenter(triangle);
             this.height = WaterMath.DistanceToWater(center);
-        }
-
-        public static void ApplyForce(Triangle triangle, Rigidbody rb)
-        {
-            new ArchimedForce(triangle, rb).ApplyForce();
+            ApplyForce();
         }
 
         private void ApplyForce()
         {
             var force = MakeForce();
             rb.AddForceAtPosition(force, center);
-            //TODO debug purposes DisplayWorker.DisplayForce(center, force);
+            //TODO debug purposes 
+            //DisplayWorker.DisplayForce(center, force);
         }
 
         private Vector3 MakeForce()
         {
             Vector3 direction = -TriangleMath.GetNormal(triangle);
             float square = TriangleMath.GetSquare(triangle);
+            float gravity = UnityEngine.Physics.gravity.magnitude;
 
-            float magnitude = density * gravity * height * square;
-            /* TODO If need only vertical force */
-            //direction = Vector3.Project(direction, Vector3.up);
+            float magnitude = DENSITY * gravity * height * square;
+            if (UP_ONLY)
+            {
+                direction = Vector3.Project(direction, Vector3.up);
+            }
             return direction * Mathf.Abs(magnitude);
         }
     }

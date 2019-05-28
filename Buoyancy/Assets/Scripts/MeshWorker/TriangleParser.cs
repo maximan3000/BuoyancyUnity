@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using Buoyancy.Struct;
 
 namespace Buoyancy.MeshWorker
 {
-    class TriangleParser
+    public class TriangleParser
     {
         public static List<Triangle> parse(Mesh mesh, Transform transform = null)
         {

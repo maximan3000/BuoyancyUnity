@@ -4,7 +4,7 @@ using Buoyancy.Struct;
 
 namespace Buoyancy.Debug
 {
-    public class DisplayWorker
+    public static class DisplayWorker
     {
         public static void DisplayTriangles(List<Triangle> triangles)
         {

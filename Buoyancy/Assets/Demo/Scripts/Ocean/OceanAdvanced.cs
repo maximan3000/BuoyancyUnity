@@ -5,6 +5,9 @@ namespace Demo.Ocean
 {
     public class OceanAdvanced : MonoBehaviour
     {
+        public float amplitudeMultiplier = 1f;
+        public float speedMultiplier = 1f;
+
         class Wave
         {
             public float waveLength { get; set; }
@@ -19,7 +22,7 @@ namespace Demo.Ocean
             {
                 this.waveLength = waveLength;
                 this.speed = speed;
-                this.amplitude = amplitude * 0;
+                this.amplitude = amplitude;
                 this.sharpness = sharpness;
                 this.direction = direction.normalized;
                 frequency = (2 * Mathf.PI) / waveLength;
@@ -35,17 +38,19 @@ namespace Demo.Ocean
 
         const int NB_WAVE = 5;
         const int NB_INTERACTIONS = 64;
-        static Wave[] waves =
-        {
-            new Wave(99, 1.0f, 1.4f, 0.9f, new Vector2(1.0f,  0.2f)),
-            new Wave(60, 1.2f, 0.8f, 0.5f, new Vector2(1.0f,  3.0f)),
-            new Wave(20, 3.5f, 0.4f, 0.8f, new Vector2(2.0f,  4.0f)),
-            new Wave(30, 2.0f, 0.4f, 0.4f, new Vector2(-1.0f, 0.0f)),
-            new Wave(10, 3.0f, 0.05f, 0.9f,new Vector2(-1.0f, 1.2f))
-          };
+        static Wave[] waves;
+        
 
         void Awake()
         {
+            waves = new Wave[] {
+                new Wave(99, 1.0f*speedMultiplier, 1.4f*amplitudeMultiplier, 0.9f, new Vector2(1.0f, 0.2f)),
+                new Wave(60, 1.2f*speedMultiplier, 0.8f*amplitudeMultiplier, 0.5f, new Vector2(1.0f, 3.0f)),
+                new Wave(20, 3.5f*speedMultiplier, 0.4f*amplitudeMultiplier, 0.8f, new Vector2(2.0f, 4.0f)),
+                new Wave(30, 2.0f*speedMultiplier, 0.4f*amplitudeMultiplier, 0.4f, new Vector2(-1.0f, 0.0f)),
+                new Wave(10, 3.0f*speedMultiplier, 0.05f*amplitudeMultiplier, 0.9f, new Vector2(-1.0f, 1.2f))
+            };
+
             Vector4[] v_waves = new Vector4[NB_WAVE];
             Vector4[] v_waves_dir = new Vector4[NB_WAVE];
             for (int i = 0; i < NB_WAVE; i++)

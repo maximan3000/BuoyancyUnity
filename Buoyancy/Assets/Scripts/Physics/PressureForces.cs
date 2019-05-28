@@ -5,12 +5,12 @@ using Buoyancy.Debug;
 
 namespace Buoyancy.Physics
 {
-    class PressureForces
+    internal class PressureForces : IForce
     {
-        public static float pressureDragCoefficient = 1200f;
-        public static float suctionDragCoefficient = 1200f;
-        public static float pressureFalloffPower = 0.1f;
-        public static float suctionFalloffPower = 0.1f;
+        private float PRESSURE_DRAG_COEFFICIENT;
+        private float SUCTION_DRAG_COEFFICIENT;
+        private float PRESSURE_FALL_OF_POWER;
+        private float SUCTION_FALL_OF_POWER;
 
         private Rigidbody rb;
         private Triangle triangle;
@@ -20,7 +20,16 @@ namespace Buoyancy.Physics
         private float angleNormalVelocity;
         private float cosNormalVelocity;
 
-        public PressureForces(Triangle triangle, Rigidbody rb)
+        public PressureForces(float pressureDragCoefficient, float suctionDragCoefficient, 
+            float pressureFallOfPower, float suctionFallOfPower)
+        {
+            this.PRESSURE_DRAG_COEFFICIENT = pressureDragCoefficient;
+            this.SUCTION_DRAG_COEFFICIENT = suctionDragCoefficient;
+            this.PRESSURE_FALL_OF_POWER = pressureFallOfPower;
+            this.SUCTION_FALL_OF_POWER = suctionFallOfPower;
+        }
+
+        public void ApplyForce(Triangle triangle, Rigidbody rb)
         {
             this.triangle = triangle;
             this.rb = rb;
@@ -29,11 +38,8 @@ namespace Buoyancy.Physics
             this.normal = TriangleMath.GetNormal(triangle);
             this.angleNormalVelocity = Vector3.Angle(normal, rb.velocity);
             this.cosNormalVelocity = Mathf.Cos(angleNormalVelocity);
-        }
 
-        public static void ApplyForce(Triangle triangle, Rigidbody rb)
-        {
-            new PressureForces(triangle, rb).ApplyForce();
+            ApplyForce();
         }
 
         private void ApplyForce()
@@ -43,13 +49,15 @@ namespace Buoyancy.Physics
             {
                 force = MakePressureForce();
                 rb.AddForceAtPosition(force, center);
-                //TODO debug purposes DisplayWorker.DisplayForce(center, force);
+                //TODO debug purposes 
+                //DisplayWorker.DisplayForce(center, force);
             }
             else if (angleNormalVelocity >= 90f)
             {
                 force = MakeSuctionForce();
                 rb.AddForceAtPosition(force, center);
-                //TODO debug purposes DisplayWorker.DisplayForce(center, force);
+                //TODO debug purposes 
+                //DisplayWorker.DisplayForce(center, force);
             }
         }
 
@@ -59,10 +67,10 @@ namespace Buoyancy.Physics
             float square = TriangleMath.GetSquare(triangle);
 
             float magnitude = 
-                pressureDragCoefficient * 
+                PRESSURE_DRAG_COEFFICIENT * 
                 speed * speed * 
                 square * 
-                Mathf.Pow(Mathf.Abs(cosNormalVelocity), pressureFalloffPower);
+                Mathf.Pow(Mathf.Abs(cosNormalVelocity), PRESSURE_FALL_OF_POWER);
             return direction * Mathf.Abs(magnitude);
         }
 
@@ -72,10 +80,10 @@ namespace Buoyancy.Physics
             float square = TriangleMath.GetSquare(triangle);
 
             float magnitude =
-                suctionDragCoefficient *
+                SUCTION_DRAG_COEFFICIENT *
                 speed * speed *
                 square *
-                Mathf.Pow(Mathf.Abs(cosNormalVelocity), suctionFalloffPower);
+                Mathf.Pow(Mathf.Abs(cosNormalVelocity), SUCTION_FALL_OF_POWER);
             return direction * Mathf.Abs(magnitude);
         }
     }

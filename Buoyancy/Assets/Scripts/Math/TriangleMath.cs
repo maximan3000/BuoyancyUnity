@@ -3,14 +3,14 @@ using Buoyancy.Struct;
 
 namespace Buoyancy.Math
 {
-    public class TriangleMath
+    public static class TriangleMath
     {
         public static Vector3 GetCenter(Triangle triangle)
         {
             var center = new Vector3(
-                    (triangle.A.x + triangle.B.x + triangle.C.x) / 3,
-                    (triangle.A.y + triangle.B.y + triangle.C.y) / 3,
-                    (triangle.A.z + triangle.B.z + triangle.C.z) / 3
+                    (triangle.A.x + triangle.B.x + triangle.C.x) / 3f,
+                    (triangle.A.y + triangle.B.y + triangle.C.y) / 3f,
+                    (triangle.A.z + triangle.B.z + triangle.C.z) / 3f
             );
             return center;
         }
@@ -21,13 +21,13 @@ namespace Buoyancy.Math
             return plane.normal;
         }
 
-
         public static float GetSquare(Triangle triangle)
         {
             Vector3 AC = triangle.C - triangle.A;
             Vector3 AB = triangle.B - triangle.A;
             Vector3 cross = Vector3.Cross(AC, AB);
-            return Mathf.Abs(cross.magnitude) / 2;
+            float square = Mathf.Abs(cross.magnitude) / 2f;
+            return square;
         }
 
         public static float GetLength(Triangle triangle)
@@ -35,7 +35,8 @@ namespace Buoyancy.Math
             Vector3 AC = triangle.C - triangle.A;
             Vector3 AB = triangle.B - triangle.A;
             Vector3 BC = triangle.C - triangle.B;
-            return (Mathf.Abs(AC.magnitude) + Mathf.Abs(AB.magnitude) + Mathf.Abs(BC.magnitude)) / 3;
+            float averageSideLength = (Mathf.Abs(AC.magnitude) + Mathf.Abs(AB.magnitude) + Mathf.Abs(BC.magnitude)) / 3f;
+            return averageSideLength;
         }
     }
 }
