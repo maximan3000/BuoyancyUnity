@@ -22,25 +22,37 @@ namespace Buoyancy
         private void FixedUpdate()
         {
             var triangles = TriangleParser.parse(hullMesh, transform);
-            var underwater = HullMath.GetUnderwaterTriangles(triangles);
+            var hullTriangles = HullMath.CutHullAtWaterline(triangles);
 
             if (debugHandler != null)
             {
-                debugHandler(underwater);
+                debugHandler(hullTriangles.underwater);
             }
-            ApplyForces(underwater);
+            if (underwaterForces != null)
+            {
+                ApplyUnderwaterForces(hullTriangles.underwater);
+            }
+            if (abovewaterForces != null)
+            {
+                ApplyAbovewaterForces(hullTriangles.abovewater);
+            }
+            
             WaterMath.casheHeightMap.Clear();
         }
 
-        private void ApplyForces(List<Triangle> underwater)
+        private void ApplyUnderwaterForces(List<Triangle> underwater)
         {
-            if (applyForcesHandler == null)
-            {
-                return;
-            }
             foreach (Triangle triangle in underwater)
             {
-                applyForcesHandler(triangle, rb);
+                underwaterForces(triangle, rb);
+            }
+        }
+
+        private void ApplyAbovewaterForces(List<Triangle> abovewater)
+        {
+            foreach (Triangle triangle in abovewater)
+            {
+                abovewaterForces(triangle, rb);
             }
         }
     }

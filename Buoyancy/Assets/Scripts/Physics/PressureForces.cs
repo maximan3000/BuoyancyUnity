@@ -7,10 +7,10 @@ namespace Buoyancy.Physics
 {
     internal class PressureForces : IForce
     {
-        private float PRESSURE_DRAG_COEFFICIENT;
-        private float SUCTION_DRAG_COEFFICIENT;
-        private float PRESSURE_FALL_OF_POWER;
-        private float SUCTION_FALL_OF_POWER;
+        private readonly float PRESSURE_DRAG_COEFFICIENT;
+        private readonly float SUCTION_DRAG_COEFFICIENT;
+        private readonly float PRESSURE_FALL_OF_POWER;
+        private readonly float SUCTION_FALL_OF_POWER;
 
         private Rigidbody rb;
         private Triangle triangle;

@@ -5,20 +5,20 @@ using Buoyancy.Debug;
 
 namespace Buoyancy.Physics
 {
-    internal class ArchimedForce : IForce
+    internal class AirResistanceForce : IForce
     {
+        private readonly float RESISTANCE_COEFFICIENT;
         private readonly float DENSITY;
-        private readonly bool UP_ONLY;
 
         private Rigidbody rb;
         private Triangle triangle;
         private Vector3 center;
-        private float height;
+        private float speed;
 
-        public ArchimedForce(float density, bool upOnly)
+        public AirResistanceForce(float resistanceCoefficient, float density)
         {
+            this.RESISTANCE_COEFFICIENT = resistanceCoefficient;
             this.DENSITY = density;
-            this.UP_ONLY = upOnly;
         }
 
         public void ApplyForce(Triangle triangle, Rigidbody rb)
@@ -26,7 +26,8 @@ namespace Buoyancy.Physics
             this.triangle = triangle;
             this.rb = rb;
             this.center = TriangleMath.GetCenter(triangle);
-            this.height = WaterMath.DistanceToWater(center);
+            this.speed = rb.velocity.magnitude;
+
             ApplyForce();
         }
 
@@ -40,17 +41,13 @@ namespace Buoyancy.Physics
 
         private Vector3 MakeForce()
         {
-            Vector3 direction = -TriangleMath.GetNormal(triangle);
+            var velocity = rb.velocity;
+            var normal = TriangleMath.GetNormal(triangle);
+            Vector3 direction = -Vector3.ProjectOnPlane(velocity.normalized, normal);
             float square = TriangleMath.GetSquare(triangle);
-            float gravity = UnityEngine.Physics.gravity.magnitude;
 
-            float magnitude = DENSITY * gravity * height * square;
-            if (UP_ONLY)
-            {
-                direction = Vector3.Project(direction, Vector3.up);
-            }
-            return direction * Mathf.Abs(magnitude);
+            float magnitude = (DENSITY * speed * speed * square * RESISTANCE_COEFFICIENT) / 2f;
+            return direction * Mathf.Abs(magnitude) * RESISTANCE_COEFFICIENT;
         }
     }
 }
-

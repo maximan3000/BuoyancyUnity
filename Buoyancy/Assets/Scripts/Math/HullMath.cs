@@ -6,25 +6,25 @@ namespace Buoyancy.Math
 {
     public class HullMath
     {
-        private List<Triangle> underwaterTriangles = new List<Triangle>();
+        private HullTriangles hullTriangles = new HullTriangles();
         private Vector3 H, M, L;
         private float hH, hM, hL;
 
-        public static List<Triangle> GetUnderwaterTriangles(List<Triangle> triangles)
+        public static HullTriangles CutHullAtWaterline(List<Triangle> triangles)
         {
-            return new HullMath().MakeUnderWaterTriangles(triangles);
+            return new HullMath().CutHull(triangles);
         }
 
-        private List<Triangle> MakeUnderWaterTriangles(List<Triangle> triangles)
+        private HullTriangles CutHull(List<Triangle> triangles)
         {
             foreach (Triangle triangle in triangles)
             {
-                CheckTriangle(triangle);
+                ProcessTriangle(triangle);
             }
-            return underwaterTriangles;
+            return hullTriangles;
         }
 
-        private void CheckTriangle(Triangle triangle)
+        private void ProcessTriangle(Triangle triangle)
         {
             var vertices = new List<Vector3>() { triangle.A, triangle.B, triangle.C };
             vertices.Sort((p1, p2) => p2.y.CompareTo(p1.y));
@@ -34,7 +34,7 @@ namespace Buoyancy.Math
 
             if (hH <= 0f && hM <= 0f && hL <= 0f)
             {
-                underwaterTriangles.Add(triangle);
+                hullTriangles.underwater.Add(triangle);
             }
             else if (hH > 0f && hM < 0f && hL < 0f)
             {
@@ -43,6 +43,10 @@ namespace Buoyancy.Math
             else if (hH > 0f && hM > 0f && hL < 0f)
             {
                 TwoVerticesAboveWater();
+            }
+            else
+            {
+                hullTriangles.abovewater.Add(triangle);
             }
         }
 
@@ -55,8 +59,9 @@ namespace Buoyancy.Math
             Vector3 cutMH = M + MH * tM;
             Vector3 cutLH = L + LH * tL;
 
-            underwaterTriangles.Add(new Triangle(M, cutMH, L));
-            underwaterTriangles.Add(new Triangle(L, cutLH, cutMH));
+            hullTriangles.underwater.Add(new Triangle(M, cutMH, L));
+            hullTriangles.underwater.Add(new Triangle(L, cutLH, cutMH));
+            hullTriangles.abovewater.Add(new Triangle(H, cutMH, cutLH));
         }
 
         private void TwoVerticesAboveWater()
@@ -68,7 +73,9 @@ namespace Buoyancy.Math
             Vector3 cutLM = L + LM * tM;
             Vector3 cutLH = L + LH * tH;
 
-            underwaterTriangles.Add(new Triangle(L, cutLM, cutLH));
+            hullTriangles.underwater.Add(new Triangle(L, cutLM, cutLH));
+            hullTriangles.abovewater.Add(new Triangle(H, cutLH, cutLM));
+            hullTriangles.abovewater.Add(new Triangle(H, M, cutLM));
         }
     }
 }

@@ -5,11 +5,11 @@ using Buoyancy.Debug;
 
 namespace Buoyancy.Physics
 {
-    internal class ResistanceForces : IForce
+    internal class WaterResistanceForces : IForce
     {
-        private float FORCE_MULTIPLY;
-        private float DENSITY;
-        private float VISCOSITY;
+        private readonly float FORCE_MULTIPLY;
+        private readonly float DENSITY;
+        private readonly float VISCOSITY;
 
         private float lastSpeed;
         private float resistanceCoefficient;
@@ -19,7 +19,7 @@ namespace Buoyancy.Physics
         private Vector3 center;
         private float speed;
 
-        public ResistanceForces(float forceMultiply, float density, float viscosity)
+        public WaterResistanceForces(float forceMultiply, float density, float viscosity)
         {
             this.FORCE_MULTIPLY = forceMultiply;
             this.DENSITY = density;

@@ -9,12 +9,12 @@
             return new ArchimedForce(density, upOnly);
         }
 
-        public static IForce GetResistanceForces(
+        public static IForce GetWaterResistanceForces(
             float forceMultiply = 300f,
             float density = 1000f,
             float viscosity = 0.0014f)
         {
-            return new ResistanceForces(forceMultiply, density, viscosity);
+            return new WaterResistanceForces(forceMultiply, density, viscosity);
         }
 
         public static IForce GetPressureForces(
@@ -25,6 +25,13 @@
         {
             return new PressureForces(pressureDragCoefficient, suctionDragCoefficient, 
                 pressureFallOfPower, suctionFallOfPower);
+        }
+
+        public static IForce GetAirResistanceForce(
+            float resistanceCoefficient = 1f,
+            float density = 1.2f)
+        {
+            return new AirResistanceForce(resistanceCoefficient, density);
         }
     }
 }

@@ -24,17 +24,26 @@ namespace Buoyancy
         [Header("Global parameters")]
         [Range(100f, 2000f)]
         public float densityOfWater = 1000f;
+        [Range(0f, 100f)]
+        public float densityOfAir = 1.2f;
 
         [Header("Archimed Force")]
         public bool useArchimedForce;
         public bool upOnly;
-        [Header("Resistance Forces")]
-        public bool useResistanceForces;
+
+        [Header("Water Resistance")]
+        public bool useWaterResistanceForces;
         [Range(0f, 1000f)]
-        public float forceMultiply = 300f;
+        public float waterResistanceMultiply = 300f;
         [Range(0f, 2f)]
         public float viscosity = 0.0014f;
-        [Header("Pressure Forces parameters")]
+
+        [Header("Air Resistance")]
+        public bool useAirResistanceForces;
+        [Range(0f, 1000f)]
+        public float airResistanceCoefficient = 1f;
+
+        [Header("Pressure Forces")]
         public bool usePressureForces;
         [Range(0f, 2000f)]
         public float pressureDragCoefficient = 1200f;
@@ -54,25 +63,31 @@ namespace Buoyancy
         #endregion
 
         protected delegate void ApplyForcesHandler(Triangle triangle, Rigidbody rb);
-        protected ApplyForcesHandler applyForcesHandler;
+        protected ApplyForcesHandler underwaterForces;
+        protected ApplyForcesHandler abovewaterForces;
 
         protected void HandleInspectorMenu()
         {
             if (useArchimedForce)
             {
                 var archimedForce = ForceFabric.GetArchimedForce(densityOfWater, upOnly);
-                applyForcesHandler += archimedForce.ApplyForce;
+                underwaterForces += archimedForce.ApplyForce;
             }
-            if (useResistanceForces)
+            if (useWaterResistanceForces)
             {
-                var resistanceForces = ForceFabric.GetResistanceForces(forceMultiply, densityOfWater, viscosity);
-                applyForcesHandler += resistanceForces.ApplyForce;
+                var waterResistance = ForceFabric.GetWaterResistanceForces(waterResistanceMultiply, densityOfWater, viscosity);
+                underwaterForces += waterResistance.ApplyForce;
+            }
+            if (useAirResistanceForces)
+            {
+                var airResistance = ForceFabric.GetAirResistanceForce(airResistanceCoefficient, densityOfAir);
+                abovewaterForces += airResistance.ApplyForce;
             }
             if (usePressureForces)
             {
                 var pressureForces = ForceFabric.GetPressureForces(pressureDragCoefficient, suctionDragCoefficient, 
                     pressureFallOfPower, suctionFallOfPower);
-                applyForcesHandler += pressureForces.ApplyForce;
+                underwaterForces += pressureForces.ApplyForce;
             }
             if (changeCenterOfMass)
             {
