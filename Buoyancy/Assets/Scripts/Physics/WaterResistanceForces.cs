@@ -43,8 +43,7 @@ namespace Buoyancy.Physics
 
         private void RecalculateResistanceCoefficient()
         {
-            float length = TriangleMath.GetLength(triangle);
-            float reynoldsCoefficient = (DENSITY * speed * length) / VISCOSITY;
+            float reynoldsCoefficient = (DENSITY * speed) / VISCOSITY;
 
             float temp = Mathf.Log10(reynoldsCoefficient) - 2f;
             float resistance = 0.075f / (temp * temp);

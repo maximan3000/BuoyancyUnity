@@ -568,7 +568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.14
+      value: 16.2
       objectReference: {fileID: 0}
     - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1035,7 +1035,7 @@ MonoBehaviour:
   densityOfAir: 1.2
   useArchimedForce: 1
   upOnly: 0
-  useWaterResistanceForces: 0
+  useWaterResistanceForces: 1
   waterResistanceMultiply: 300
   viscosity: 0.0014
   useAirResistanceForces: 1
@@ -1625,7 +1625,7 @@ PrefabInstance:
     - target: {fileID: 59476553488910652, guid: e1e9f48d71f586e48b0ab82651cd8eb4,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 1.6470366
+      value: 1.647037
       objectReference: {fileID: 0}
     - target: {fileID: 59476553488910652, guid: e1e9f48d71f586e48b0ab82651cd8eb4,
         type: 3}

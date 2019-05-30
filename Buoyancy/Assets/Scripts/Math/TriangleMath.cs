@@ -29,15 +29,6 @@ namespace Buoyancy.Math
             float square = Mathf.Abs(cross.magnitude) / 2f;
             return square;
         }
-
-        public static float GetLength(Triangle triangle)
-        {
-            Vector3 AC = triangle.C - triangle.A;
-            Vector3 AB = triangle.B - triangle.A;
-            Vector3 BC = triangle.C - triangle.B;
-            float averageSideLength = (Mathf.Abs(AC.magnitude) + Mathf.Abs(AB.magnitude) + Mathf.Abs(BC.magnitude)) / 3f;
-            return averageSideLength;
-        }
     }
 }
 
