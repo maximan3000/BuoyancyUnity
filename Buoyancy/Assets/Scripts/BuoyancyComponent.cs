@@ -9,13 +9,10 @@ namespace Buoyancy
     public class BuoyancyComponent : BuoyancyComponentInspector
     {
         private Rigidbody rb;
-        private float totalTrianglesCount;
         
         void Start()
         {
             rb = gameObject.GetComponent<Rigidbody>();
-            totalTrianglesCount = hullMesh.triangles.Length / 3;
-
             HandleInspectorMenu();
         }
 

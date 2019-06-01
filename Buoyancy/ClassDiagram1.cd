@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Buoyancy.Debug.DisplayWorker" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Debug\DisplayWorker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Buoyancy.Math.HullMath" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AASAQAAAAABAQCAAAAAAAAAAIBAAAAAAAAAACEYAAAA=</HashCode>
+      <FileName>Assets\Scripts\Math\HullMath.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Buoyancy.Math.TriangleMath" Collapsed="true">
+    <Position X="9.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAIAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Math\TriangleMath.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Buoyancy.Math.WaterMath" Collapsed="true">
+    <Position X="9.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAAAEIAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Math\WaterMath.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Buoyancy.MeshWorker.TriangleParser" Collapsed="true">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Assets\Scripts\MeshWorker\TriangleParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Buoyancy.Physics.AirResistanceForce" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAgAAAFAAAAAQAAABAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Physics\AirResistanceForce.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.108" />
+  </Class>
+  <Class Name="Buoyancy.Physics.ArchimedForce" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAgAAAAAAQFAAAAAQAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Physics\ArchimedForce.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Buoyancy.Physics.ForceFabric" Collapsed="true">
+    <Position X="5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEACAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAABAA=</HashCode>
+      <FileName>Assets\Scripts\Physics\ForceFabric.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Buoyancy.Physics.PressureForces" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAAAAAAAEAAAAVAIAAAQgAAAAAIQAEAAAIQAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Physics\PressureForces.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.208" />
+  </Class>
+  <Class Name="Buoyancy.Physics.WaterResistanceForces" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EEgAAIAAAAAAAAAFAAAAAQAAARAAAQAAAAAQAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Physics\WaterResistanceForces.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Buoyancy.Struct.HullTriangles" Collapsed="true">
+    <Position X="0.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Struct\HullTriangles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Buoyancy.BuoyancyComponent" Collapsed="true">
+    <Position X="0.75" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAIigAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\BuoyancyComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Buoyancy.BuoyancyComponentInspector" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <NestedTypes>
+      <Delegate Name="Buoyancy.BuoyancyComponentInspector.DebugHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\BuoyancyComponentInspector.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Buoyancy.BuoyancyComponentInspector.ApplyForcesHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\BuoyancyComponentInspector.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAgAAAIAIAAMBAAAAAACQAAAAgEggQAAKRAaAQAAAI=</HashCode>
+      <FileName>Assets\Scripts\BuoyancyComponentInspector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Buoyancy.Struct.Triangle" Collapsed="true">
+    <Position X="0.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\Struct\Triangle.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="Buoyancy.Physics.IForce" Collapsed="true">
+    <Position X="5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Physics\IForce.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
