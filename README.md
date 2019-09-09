@@ -1,6 +1,11 @@
 # Water interaction model for Unity
 Available soon in the Asset Store...
 
+<p align="center">
+	<span>English</span> |
+	<a href="./readme/README-rus.md">Pусский</a>
+</p>
+
 ## Sections
 * [What is this?](#what-is-this)
 * [Effects that are implemented](#effects-that-are-implemented)
@@ -12,18 +17,18 @@ This is an asset with component (BuoyancyComponent) that allows target gameobjec
 ## Effects that are implemented
 
 #### Pushing out 
-<img src="./3.gif" width="400">
+<img src="./readme/3.gif" width="400">
 
 #### Lift when moving
-<img src="./2.gif" width="400">
-<img src="./4.gif" width="400">
+<img src="./readme/2.gif" width="400">
+<img src="./readme/4.gif" width="400">
 
 #### Controlled drift on turn
-<img src="./1.gif" width="400">
+<img src="./readme/1.gif" width="400">
 
 #### Wave rolling and stabilization
-<img src="./5.gif" width="400">
-<img src="./6.gif" width="400">
+<img src="./readme/5.gif" width="400">
+<img src="./readme/6.gif" width="400">
 
 #### Also drag forces:
 * Air drag force
