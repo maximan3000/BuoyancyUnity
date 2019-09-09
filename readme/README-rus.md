@@ -18,18 +18,18 @@ Available soon in the Asset Store...
 ## Реализованные эффекты
 
 #### Выталкивание тела из воды
-<img src="./readme/3.gif" width="400">
+<img src="./3.gif" width="400">
 
 #### Подъемные силы при движении
-<img src="./readme/2.gif" width="400">
-<img src="./readme/4.gif" width="400">
+<img src="./2.gif" width="400">
+<img src="./4.gif" width="400">
 
 #### Контролируемый снос судна при повороте
-<img src="./readme/1.gif" width="400">
+<img src="./1.gif" width="400">
 
 #### Качка на волнах и стабилизация судна
-<img src="./readme/5.gif" width="400">
-<img src="./readme/6.gif" width="400">
+<img src="./5.gif" width="400">
+<img src="./6.gif" width="400">
 
 #### Также реализованы силы сопротивления:
 * Сопротивление воздуха
