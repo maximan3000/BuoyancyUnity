@@ -5,6 +5,46 @@ using Buoyancy.Debug;
 
 namespace Buoyancy.Physics
 {
+    /// <summary>
+    /// That is a fake forces that makes turnes more realistic (controling drifting)
+    /// and also create effect of planing forces (push the boat out of the water).
+    /// 
+    /// Pressure Drag Force - applied to triangles that are close to front of the boat.
+    /// Equation (Pressure drag):
+    /// F = C * V^2 * S * cos(n, V)^f, where 
+    /// <list type="bullet">
+    ///     <item>
+    ///         <term>C,f (<c>PRESSURE_DRAG_COEFFICIENT</c><c>SUCTION_DRAG_COEFFICIENT</c>
+    ///         <c>PRESSURE_FALL_OF_POWER</c><c>SUCTION_FALL_OF_POWER</c>)</term>
+    ///         <description>Coefficients to control the force, f - dimensionless quantity, C - kg/m^3
+    ///         C - setup magnitude, f - drift control</description>
+    ///     </item>
+    ///     <item>
+    ///         <term>V (<c>speed</c>)</term>
+    ///         <description>Speed of vehicle, m/s^2</description>
+    ///     </item>
+    ///     <item>
+    ///         <term>S (<c>square</c>)</term>
+    ///         <description>Area of the triangle, m^2</description>
+    ///     </item>
+    ///     <item>
+    ///         <term>cos(n, V)</term>
+    ///         <description>Cos from angle between normal to triangle and speed vectors</description>
+    ///     </item>
+    ///     <item>
+    ///         <term>F (result force)</term>
+    ///         <description>Pressure Drag or Suction force, N=(kg*m)/s^2</description>
+    ///     </item>
+    /// </list>
+    /// 
+    /// Direction = normal of triangle.
+    /// 
+    /// Suction Force magnitude is similar to Pressure Force.
+    /// Suction Force - applied to triangles that are close to back of the boat.
+    /// 
+    /// Direction = -normal of triangle
+    /// </summary>
+    /// <see cref="https://www.gamasutra.com/view/news/263237/Water_interaction_model_for_boats_in_video_games_Part_2.php"/>
     internal class PressureForces : IForce
     {
         private readonly float PRESSURE_DRAG_COEFFICIENT;

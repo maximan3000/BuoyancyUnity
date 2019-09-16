@@ -4,6 +4,11 @@ using UnityEngine;
 
 namespace Buoyancy.Math
 {
+    /// <summary>
+    /// Algorithm that determines underwater and abovewater parts of the boat. It also cuts triangles by waterline.
+    /// Read about it from Jacques Kerner's article "Water interaction model for boats in video games"
+    /// </summary>
+    /// <see cref="https://www.gamasutra.com/view/news/237528/Water_interaction_model_for_boats_in_video_games.php"/>
     public class HullMath
     {
         private HullTriangles hullTriangles = new HullTriangles();

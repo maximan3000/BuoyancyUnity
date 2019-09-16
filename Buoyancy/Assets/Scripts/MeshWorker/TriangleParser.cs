@@ -4,8 +4,18 @@ using Buoyancy.Struct;
 
 namespace Buoyancy.MeshWorker
 {
+    /// <summary>
+    /// Converts between structs of triangles
+    /// </summary>
     public class TriangleParser
     {
+        /// <summary>
+        /// Converts Unity triangles struct <c>Mesh.vertices</c>, <c>Mesh.triangles</c> into 
+        /// comfortable list of <c>Buoyancy.Struct.Triangle</c>
+        /// </summary>
+        /// <param name="mesh">Mesh of the target gameobject (boat, etc)</param>
+        /// <param name="transform">If there is need to shift position</param>
+        /// <returns></returns>
         public static List<Triangle> parse(Mesh mesh, Transform transform = null)
         {
             var triangles = new List<Triangle>();

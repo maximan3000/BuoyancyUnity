@@ -6,6 +6,11 @@ using Buoyancy.Debug;
 
 namespace Buoyancy
 {
+    /// <summary>
+    /// Additional class for <c>BuoyancyComponent</c> that processes interactions with interface in Unity Editor. 
+    /// It also contains all settings (variables & constants) for <c>BuoyancyComponent</c>.
+    /// <see cref="BuoyancyComponent"/>
+    /// </summary>
     [RequireComponent(typeof(Rigidbody))]
     [DisallowMultipleComponent]
     [HelpURL("https://www.gamasutra.com/view/news/237528/Water_interaction_model_for_boats_in_video_games.php")]
@@ -22,6 +27,7 @@ namespace Buoyancy
         public Mesh hullMesh;
 
         [Header("Global parameters")]
+        [Tooltip("Density, kg/m^3")]
         [Range(100f, 2000f)]
         public float densityOfWater = 1000f;
         [Range(0f, 100f)]
@@ -35,8 +41,9 @@ namespace Buoyancy
         public bool useWaterResistanceForces;
         [Range(0f, 1000f)]
         public float waterResistanceMultiply = 300f;
-        [Range(0f, 2f)]
-        public float viscosity = 0.0014f;
+        [Range(0.00001f, 0.0000001f)]
+        [Tooltip("Kinematic viscosity, m^2/s")]
+        public float viscosity = 0.000001789f;
 
         [Header("Air Resistance")]
         public bool useAirResistanceForces;

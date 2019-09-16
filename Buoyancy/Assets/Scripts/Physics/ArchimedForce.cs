@@ -5,6 +5,38 @@ using Buoyancy.Debug;
 
 namespace Buoyancy.Physics
 {
+    /// <summary>
+    /// Calculates Archimed Force via the pressure affected on each triangle surface of the boat hull. 
+    /// The pressure depends on depth of triangle center and triangle area.
+    /// 
+    /// Equation:
+    /// F = r * g * h * S, where
+    /// <list type="bullet">
+    ///     <item>
+    ///         <term>r (<c>DENSITY</c>)</term>
+    ///         <description>Density of water, kg/m^3</description>
+    ///     </item>
+    ///     <item>
+    ///         <term>g (<c>gravity</c>)</term>
+    ///         <description>Gravity constant, m/s^2</description>
+    ///         <see cref="UnityEngine.Physics.gravity.magnitude"/>
+    ///     </item>
+    ///     <item>
+    ///         <term>h (<c>height</c>)</term>
+    ///         <description>Distance between center of the triangle and waterline, m</description>
+    ///     </item>
+    ///     <item>
+    ///         <term>S (<c>square</c>)</term>
+    ///         <description>Area of the triangle, m^2</description>
+    ///     </item>
+    ///     <item>
+    ///         <term>F (result force)</term>
+    ///         <description>Archimed force, N=(kg*m)/s^2</description>
+    ///     </item>
+    /// </list>
+    /// 
+    /// Direction = normal of triangle.
+    /// </summary>
     internal class ArchimedForce : IForce
     {
         private readonly float DENSITY;

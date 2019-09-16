@@ -3,6 +3,9 @@ using Buoyancy.Struct;
 
 namespace Buoyancy.Math
 {
+    /// <summary>
+    /// Lib with all calculations for <c>Triangle</c> struct
+    /// </summary>
     public static class TriangleMath
     {
         public static Vector3 GetCenter(Triangle triangle)

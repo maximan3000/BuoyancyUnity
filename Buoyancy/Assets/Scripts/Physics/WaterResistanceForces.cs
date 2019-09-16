@@ -5,6 +5,40 @@ using Buoyancy.Debug;
 
 namespace Buoyancy.Physics
 {
+    /// <summary>
+    /// Calculates the water drag (on the move) in terms of Viscosity (Viscous Water Resistance).
+    /// The force calculation uses Reynolds Coefficient so the force magnitude depends on speed very much.
+    /// 
+    /// Equation:
+    /// R = 1/2 * r * C * S * V^2, where
+    /// <list type="bullet">
+    ///     <item>
+    ///         <term>r (<c>DENSITY</c>)</term>
+    ///         <description>Density of water, kg/m^3</description>
+    ///     </item>
+    ///     <item>
+    ///         <term>C (<c>FORCE_MULTIPLY</c>)</term>
+    ///         <description>Multiplier to control the force, dimensionless quantity
+    ///         C = 0.075/(log10(Re)-2)^2,
+    ///         Re (Reynolds) = (r*V)/w, w (<c>VISCOSITY</c>) is kinematic viscosity of water, m^2/s
+    ///         </description>
+    ///     </item>
+    ///     <item>
+    ///         <term>S (<c>square</c>)</term>
+    ///         <description>Area of the triangle, m^2</description>
+    ///     </item>
+    ///     <item>
+    ///         <term>V (<c>speed</c>)</term>
+    ///         <description>Speed of vehicle, m/s^2</description>
+    ///     </item>
+    ///     <item>
+    ///         <term>R (result force)</term>
+    ///         <description>Resistance force, N=(kg*m)/s^2</description>
+    ///     </item>
+    /// </list>
+    /// 
+    /// Direction = -V projected on plane of triangle.
+    /// </summary>
     internal class WaterResistanceForces : IForce
     {
         private readonly float FORCE_MULTIPLY;

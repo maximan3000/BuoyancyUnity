@@ -1,5 +1,8 @@
 ﻿namespace Buoyancy.Physics
 {
+    /// <summary>
+    /// Combines the creation instances of force controllers. Creates instances via interface <c>IForce</c>
+    /// </summary>
     public static class ForceFabric
     {
         public static IForce GetArchimedForce(
@@ -12,7 +15,7 @@
         public static IForce GetWaterResistanceForces(
             float forceMultiply = 300f,
             float density = 1000f,
-            float viscosity = 0.0014f)
+            float viscosity = 0.000001789f)
         {
             return new WaterResistanceForces(forceMultiply, density, viscosity);
         }

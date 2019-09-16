@@ -4,6 +4,9 @@ using Buoyancy.Struct;
 
 namespace Buoyancy.Debug
 {
+    /// <summary>
+    /// Methods for debugging in Unity Editor
+    /// </summary>
     public static class DisplayWorker
     {
         public static void DisplayTriangles(List<Triangle> triangles)
