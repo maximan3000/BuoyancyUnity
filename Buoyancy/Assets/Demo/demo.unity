@@ -156,110 +156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e99c37ca4cf85a478ce39b059fdad0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &125981143
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1050052821}
-    m_Modifications:
-    - target: {fileID: 164968, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_Name
-      value: Barrel_full (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 164968, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 20.47345
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 18.962543
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -15.088587
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.000000021855694
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_Mass
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_AngularDrag
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114000011567165670, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
---- !u!1 &125981144 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 164968, guid: 302291d3d4f359149a286e04be7ca69e,
-    type: 3}
-  m_PrefabInstance: {fileID: 125981143}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &125981145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 125981144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ee01600aab452741b5afcaf7d3583a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changeCenterOfMass: 0
-  newCenterOfMass: {fileID: 0}
-  hullMesh: {fileID: 4300000, guid: ee86c1e202286444da9f950e33d5654a, type: 3}
-  densityOfWater: 1000
-  densityOfAir: 1.2
-  useArchimedForce: 1
-  upOnly: 1
-  useWaterResistanceForces: 1
-  waterResistanceMultiply: 10
-  viscosity: 0.0014
-  useAirResistanceForces: 1
-  airResistanceCoefficient: 1
-  usePressureForces: 1
-  pressureDragCoefficient: 0
-  suctionDragCoefficient: 100
-  pressureFallOfPower: 0
-  suctionFallOfPower: 1
-  showUnderwaterPart: 1
---- !u!4 &125981150 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e,
-    type: 3}
-  m_PrefabInstance: {fileID: 125981143}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &193015212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -305,11 +201,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
       propertyPath: m_Mass
-      value: 10
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
       propertyPath: m_AngularDrag
@@ -348,16 +244,16 @@ MonoBehaviour:
   useArchimedForce: 1
   upOnly: 1
   useWaterResistanceForces: 1
-  waterResistanceMultiply: 10
-  viscosity: 0.0014
+  waterResistanceMultiply: 100
+  viscosity: 0.000001789
   useAirResistanceForces: 1
   airResistanceCoefficient: 1
-  usePressureForces: 1
-  pressureDragCoefficient: 0
+  usePressureForces: 0
+  pressureDragCoefficient: 100
   suctionDragCoefficient: 100
-  pressureFallOfPower: 0
+  pressureFallOfPower: 1
   suctionFallOfPower: 1
-  showUnderwaterPart: 1
+  showUnderwaterPart: 0
 --- !u!4 &193015219 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e,
@@ -713,11 +609,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
       propertyPath: m_Mass
-      value: 10
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
       propertyPath: m_AngularDrag
@@ -772,7 +668,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649325641}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.00945, y: -10.862543, z: -4.523412}
+  m_LocalPosition: {x: -11.00945, y: -56.9, z: -4.523412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1503380262}
@@ -837,110 +733,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e99c37ca4cf85a478ce39b059fdad0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &889191673
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1050052821}
-    m_Modifications:
-    - target: {fileID: 164968, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_Name
-      value: Barrel_full (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 164968, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 20.03945
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 18.962543
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -17.364588
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.000000021855694
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_Mass
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_AngularDrag
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114000011567165670, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
---- !u!1 &889191674 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 164968, guid: 302291d3d4f359149a286e04be7ca69e,
-    type: 3}
-  m_PrefabInstance: {fileID: 889191673}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &889191675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 889191674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ee01600aab452741b5afcaf7d3583a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changeCenterOfMass: 0
-  newCenterOfMass: {fileID: 0}
-  hullMesh: {fileID: 4300000, guid: ee86c1e202286444da9f950e33d5654a, type: 3}
-  densityOfWater: 1000
-  densityOfAir: 1.2
-  useArchimedForce: 1
-  upOnly: 1
-  useWaterResistanceForces: 1
-  waterResistanceMultiply: 10
-  viscosity: 0.0014
-  useAirResistanceForces: 1
-  airResistanceCoefficient: 1
-  usePressureForces: 1
-  pressureDragCoefficient: 0
-  suctionDragCoefficient: 100
-  pressureFallOfPower: 0
-  suctionFallOfPower: 1
-  showUnderwaterPart: 1
---- !u!4 &889191680 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e,
-    type: 3}
-  m_PrefabInstance: {fileID: 889191673}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &924313235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -990,11 +782,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
       propertyPath: m_Mass
-      value: 3
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
       propertyPath: m_AngularDrag
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
       propertyPath: m_UseGravity
@@ -1029,16 +821,16 @@ MonoBehaviour:
   useArchimedForce: 1
   upOnly: 1
   useWaterResistanceForces: 1
-  waterResistanceMultiply: 10
-  viscosity: 0.0014
+  waterResistanceMultiply: 100
+  viscosity: 0.000001789
   useAirResistanceForces: 1
   airResistanceCoefficient: 1
-  usePressureForces: 1
-  pressureDragCoefficient: 0
+  usePressureForces: 0
+  pressureDragCoefficient: 100
   suctionDragCoefficient: 100
-  pressureFallOfPower: 0
+  pressureFallOfPower: 1
   suctionFallOfPower: 1
-  showUnderwaterPart: 1
+  showUnderwaterPart: 0
 --- !u!4 &924313242 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e,
@@ -1090,13 +882,9 @@ Transform:
   m_LocalPosition: {x: -11.00945, y: -10.862543, z: -4.523412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1829630419}
   - {fileID: 924313242}
   - {fileID: 1707855365}
   - {fileID: 1881288396}
-  - {fileID: 125981150}
-  - {fileID: 889191680}
-  - {fileID: 1378432627}
   - {fileID: 193015219}
   - {fileID: 2046104333}
   - {fileID: 1209412501}
@@ -1208,7 +996,7 @@ MonoBehaviour:
   upOnly: 0
   useWaterResistanceForces: 1
   waterResistanceMultiply: 200
-  viscosity: 0.0014
+  viscosity: 0.000001789
   useAirResistanceForces: 1
   airResistanceCoefficient: 10
   usePressureForces: 1
@@ -1375,125 +1163,21 @@ MonoBehaviour:
   useArchimedForce: 1
   upOnly: 1
   useWaterResistanceForces: 1
-  waterResistanceMultiply: 10
-  viscosity: 0.0014
+  waterResistanceMultiply: 100
+  viscosity: 0.000001789
   useAirResistanceForces: 1
   airResistanceCoefficient: 1
-  usePressureForces: 1
-  pressureDragCoefficient: 0
+  usePressureForces: 0
+  pressureDragCoefficient: 100
   suctionDragCoefficient: 100
-  pressureFallOfPower: 0
+  pressureFallOfPower: 1
   suctionFallOfPower: 1
-  showUnderwaterPart: 1
+  showUnderwaterPart: 0
 --- !u!4 &1209412501 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e,
     type: 3}
   m_PrefabInstance: {fileID: 630261855}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1378432620
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1050052821}
-    m_Modifications:
-    - target: {fileID: 164968, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_Name
-      value: Barrel_full (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 164968, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 17.94945
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 18.962543
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -15.931587
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.000000021855694
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_Mass
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_AngularDrag
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114000011567165670, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
---- !u!1 &1378432621 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 164968, guid: 302291d3d4f359149a286e04be7ca69e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1378432620}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1378432622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1378432621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ee01600aab452741b5afcaf7d3583a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changeCenterOfMass: 0
-  newCenterOfMass: {fileID: 0}
-  hullMesh: {fileID: 4300000, guid: ee86c1e202286444da9f950e33d5654a, type: 3}
-  densityOfWater: 1000
-  densityOfAir: 1.2
-  useArchimedForce: 1
-  upOnly: 1
-  useWaterResistanceForces: 1
-  waterResistanceMultiply: 10
-  viscosity: 0.0014
-  useAirResistanceForces: 1
-  airResistanceCoefficient: 1
-  usePressureForces: 1
-  pressureDragCoefficient: 0
-  suctionDragCoefficient: 100
-  pressureFallOfPower: 0
-  suctionFallOfPower: 1
-  showUnderwaterPart: 1
---- !u!4 &1378432627 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1378432620}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1454572930
 GameObject:
@@ -1798,11 +1482,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
       propertyPath: m_Mass
-      value: 3
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
       propertyPath: m_AngularDrag
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
       propertyPath: m_UseGravity
@@ -1837,16 +1521,16 @@ MonoBehaviour:
   useArchimedForce: 1
   upOnly: 1
   useWaterResistanceForces: 1
-  waterResistanceMultiply: 10
-  viscosity: 0.0014
+  waterResistanceMultiply: 100
+  viscosity: 0.000001789
   useAirResistanceForces: 1
   airResistanceCoefficient: 1
-  usePressureForces: 1
-  pressureDragCoefficient: 0
+  usePressureForces: 0
+  pressureDragCoefficient: 100
   suctionDragCoefficient: 100
-  pressureFallOfPower: 0
+  pressureFallOfPower: 1
   suctionFallOfPower: 1
-  showUnderwaterPart: 1
+  showUnderwaterPart: 0
 --- !u!4 &1707855365 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e,
@@ -1875,110 +1559,6 @@ MonoBehaviour:
   speedMultiplier: 1
   ocean: {fileID: 2100000, guid: be1672567266e5f40a8a109aace4fdd4, type: 2}
   sun: {fileID: 1454572931}
---- !u!1001 &1829630412
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1050052821}
-    m_Modifications:
-    - target: {fileID: 164968, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_Name
-      value: Barrel_empty (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 164968, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 20.04945
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 18.962543
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -15.816587
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.000000021855694
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_Mass
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_AngularDrag
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114000011567165670, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
---- !u!1 &1829630413 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 164968, guid: 302291d3d4f359149a286e04be7ca69e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1829630412}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1829630414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829630413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ee01600aab452741b5afcaf7d3583a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changeCenterOfMass: 0
-  newCenterOfMass: {fileID: 0}
-  hullMesh: {fileID: 4300000, guid: ee86c1e202286444da9f950e33d5654a, type: 3}
-  densityOfWater: 1000
-  densityOfAir: 1.2
-  useArchimedForce: 1
-  upOnly: 1
-  useWaterResistanceForces: 1
-  waterResistanceMultiply: 10
-  viscosity: 0.0014
-  useAirResistanceForces: 1
-  airResistanceCoefficient: 1
-  usePressureForces: 1
-  pressureDragCoefficient: 0
-  suctionDragCoefficient: 100
-  pressureFallOfPower: 0
-  suctionFallOfPower: 1
-  showUnderwaterPart: 1
---- !u!4 &1829630419 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1829630412}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1831684646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2088,7 +1668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5423154, guid: e1e9f48d71f586e48b0ab82651cd8eb4, type: 3}
       propertyPath: m_Mass
-      value: 50000
+      value: 60000
       objectReference: {fileID: 0}
     - target: {fileID: 59476553488910652, guid: e1e9f48d71f586e48b0ab82651cd8eb4,
         type: 3}
@@ -2288,7 +1868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.24945
+      value: 18.96
       objectReference: {fileID: 0}
     - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2320,11 +1900,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
       propertyPath: m_Mass
-      value: 3
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
       propertyPath: m_AngularDrag
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
       propertyPath: m_UseGravity
@@ -2359,16 +1939,16 @@ MonoBehaviour:
   useArchimedForce: 1
   upOnly: 1
   useWaterResistanceForces: 1
-  waterResistanceMultiply: 10
-  viscosity: 0.0014
+  waterResistanceMultiply: 100
+  viscosity: 0.000001789
   useAirResistanceForces: 1
   airResistanceCoefficient: 1
-  usePressureForces: 1
-  pressureDragCoefficient: 0
+  usePressureForces: 0
+  pressureDragCoefficient: 100
   suctionDragCoefficient: 100
-  pressureFallOfPower: 0
+  pressureFallOfPower: 1
   suctionFallOfPower: 1
-  showUnderwaterPart: 1
+  showUnderwaterPart: 0
 --- !u!4 &1881288396 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e,
@@ -2627,11 +2207,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
       propertyPath: m_Mass
-      value: 10
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 5408556, guid: 302291d3d4f359149a286e04be7ca69e, type: 3}
       propertyPath: m_AngularDrag
@@ -2670,16 +2250,16 @@ MonoBehaviour:
   useArchimedForce: 1
   upOnly: 1
   useWaterResistanceForces: 1
-  waterResistanceMultiply: 10
-  viscosity: 0.0014
+  waterResistanceMultiply: 100
+  viscosity: 0.000001789
   useAirResistanceForces: 1
   airResistanceCoefficient: 1
-  usePressureForces: 1
-  pressureDragCoefficient: 0
+  usePressureForces: 0
+  pressureDragCoefficient: 100
   suctionDragCoefficient: 100
-  pressureFallOfPower: 0
+  pressureFallOfPower: 1
   suctionFallOfPower: 1
-  showUnderwaterPart: 1
+  showUnderwaterPart: 0
 --- !u!4 &2046104333 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 407542, guid: 302291d3d4f359149a286e04be7ca69e,

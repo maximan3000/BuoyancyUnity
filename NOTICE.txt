@@ -1,0 +1,8 @@
+This project is licensed under the Apache License, Version 2.0 ("LICENSE.txt");
+
+This product includes software (Buoyancy/Assets/Scripts) developed by:
+Copyright 2019 Maksim Petrov <grayen.job@gmail.com>
+
+The product also includes part that is not under Apache 2.0 license (Buoyancy/Assets/Demo). It is developed by:
+Nathan Gauër <https://www.studiopixl.com/>
+That was taken from Unity Asset Store - Fast Buoyancy <https://assetstore.unity.com/packages/tools/physics/fast-buoyancy-61079>
