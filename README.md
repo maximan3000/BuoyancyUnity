@@ -27,8 +27,8 @@ This is an asset with component (BuoyancyComponent) that allows target gameobjec
 | Controlled drift on turn | | 
 | ![Controlled drift on turn](readme/1.gif) | |
 |||
-| ave rolling and stabilization | |
-| ![ave rolling and stabilization](readme/5.gif) | ![ave rolling and stabilization](readme/6.gif) |
+| Wave rolling and stabilization | |
+| ![Wave rolling and stabilization](readme/5.gif) | ![Wave rolling and stabilization](readme/6.gif) |
 
 #### Also drag forces:
 * Air drag force
