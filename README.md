@@ -16,19 +16,19 @@ Available soon in the Asset Store...
 This is an asset with component (BuoyancyComponent) that allows target gameobjects to floating
 ## Effects that are implemented
 
-#### Pushing out 
-<img src="./readme/3.gif" width="400">
-
-#### Lift when moving
-<img src="./readme/2.gif" width="400">
-<img src="./readme/4.gif" width="400">
-
-#### Controlled drift on turn
-<img src="./readme/1.gif" width="400">
-
-#### Wave rolling and stabilization
-<img src="./readme/5.gif" width="400">
-<img src="./readme/6.gif" width="400">
+|||
+|:---|---:|
+| Pushing out | | 
+| ![Pushing out](readme/3.gif) | |
+|||
+| Lift when moving | |
+| ![Lift when moving](readme/2.gif) | ![Lift when moving](readme/4.gif) |
+|||
+| Controlled drift on turn | | 
+| ![Controlled drift on turn](readme/1.gif) | |
+|||
+| ave rolling and stabilization | |
+| ![ave rolling and stabilization](readme/5.gif) | ![ave rolling and stabilization](readme/6.gif) |
 
 #### Also drag forces:
 * Air drag force
